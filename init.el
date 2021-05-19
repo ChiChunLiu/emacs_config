@@ -27,7 +27,7 @@
      ("melpa-stable" . "http://stable.melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (ess org-vcard nord-theme ivy use-package htmlize flycheck elpy))))
+    (ivy-hydra ess org-vcard nord-theme ivy use-package htmlize flycheck elpy))))
 
 
 (package-initialize)
@@ -46,6 +46,9 @@
 :config
 (which-key-mode))
 
+(use-package ivy-hydra
+  :ensure t
+  )
 
 ;; Haskell
 (use-package haskell-mode
@@ -69,6 +72,8 @@
 (use-package counsel
   :ensure t)
 
+
+
 (use-package swiper
   :ensure try
   :config
@@ -77,6 +82,7 @@
     (setq ivy-use-virtual-buffers t)
     (global-set-key "\C-s" 'swiper)
     (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+    (global-set-key (kbd "C-c k") 'counsel-ag)
     (define-key read-expression-map (kbd "C-r") 'counsel-expression-history))
   )
 
@@ -105,7 +111,10 @@
   :ensure t
   :config
   (projectile-global-mode)
-  (setq projectile-completion-system 'ivy))
+  :custom
+  (projectile-completion-system 'ivy)
+  :bind-keymap
+  ("C-c p" . projectile-command-map))
 
 (use-package counsel-projectile
   :ensure t
