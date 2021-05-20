@@ -38,24 +38,24 @@
 (use-package nord-theme
   :ensure t
   :init
-  (load-theme 'nord t)
-  )
+  (load-theme 'nord t))
 
 (use-package which-key
-:ensure t
-:config
-(which-key-mode))
+  :ensure t
+  :config
+  (which-key-mode))
 
 (use-package ivy-hydra
-  :ensure t
-  )
+  :ensure t)
 
 ;; Haskell
 (use-package haskell-mode
+  :disabled
   :ensure t)
 
 ;; ESS
 (use-package ess
+ :disabled
  :ensure t
  :init (require 'ess-site))
 
@@ -73,7 +73,6 @@
   :ensure t)
 
 
-
 (use-package swiper
   :ensure try
   :config
@@ -83,8 +82,7 @@
     (global-set-key "\C-s" 'swiper)
     (global-set-key (kbd "C-x C-f") 'counsel-find-file)
     (global-set-key (kbd "C-c k") 'counsel-ag)
-    (define-key read-expression-map (kbd "C-r") 'counsel-expression-history))
-  )
+    (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)))
 
 
 (use-package auto-complete
@@ -92,19 +90,17 @@
   :init
   (progn
     (ac-config-default)
-    (global-auto-complete-mode t))
-  )
+    (global-auto-complete-mode t)))
 
 (use-package elpy
   :ensure t
-  :init
+  :config
   (elpy-enable))
 
 (use-package yasnippet
   :ensure t
-  :init
-  (yas-global-mode 1)
-  )
+  :config
+  (yas-global-mode 1))
 
 ;; projectile
 (use-package projectile
@@ -120,6 +116,10 @@
   :ensure t
   :config
   (counsel-projectile-mode))
+
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status)))
 
 ;;; init.el ends here
 
