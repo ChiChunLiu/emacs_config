@@ -1,3 +1,4 @@
+
 ;; emacs set-up tweaked from Mike Zamansky
 
 (setq inhibit-startup-message t)
@@ -14,6 +15,8 @@
   kept-old-versions 2
   version-control t)       ; use versioned backups
 
+(set-face-attribute 'default nil :font "Roboto Mono")
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (custom-set-variables
@@ -22,12 +25,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-archives
-   (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa-stable" . "http://stable.melpa.org/packages/"))))
+   '(("gnu" . "http://elpa.gnu.org/packages/")
+     ("melpa-stable" . "http://stable.melpa.org/packages/")))
  '(package-selected-packages
-   (quote
-    (ivy-hydra ess org-vcard nord-theme ivy use-package htmlize flycheck elpy))))
+   '(multiple-cursors dired-x dired+ magit ivy-hydra ess org-vcard nord-theme ivy use-package htmlize flycheck elpy)))
 
 
 (package-initialize)
@@ -84,6 +85,9 @@
     (global-set-key (kbd "C-c k") 'counsel-ag)
     (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)))
 
+(use-package multiple-cursors
+  :ensure t
+  :config (require 'multiple-cursors))
 
 (use-package auto-complete
   :ensure t
