@@ -1,5 +1,6 @@
-
 ;; emacs set-up tweaked from Mike Zamansky
+;; install Roboto Moto font here
+;; https://fonts.google.com/specimen/Roboto+Mono
 
 (setq inhibit-startup-message t)
 (global-linum-mode t)
@@ -24,11 +25,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files '("~/.emacs/work_agenda.org" "~/.emacs/personal_agenda.org"))
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa-stable" . "http://stable.melpa.org/packages/")))
  '(package-selected-packages
-   '(multiple-cursors dired-x dired+ magit ivy-hydra ess org-vcard nord-theme ivy use-package htmlize flycheck elpy)))
+   '(multiple-cursors magit ivy-hydra ess org-vcard nord-theme ivy use-package htmlize flycheck elpy)))
 
 
 (package-initialize)
@@ -73,7 +75,6 @@
 (use-package counsel
   :ensure t)
 
-
 (use-package swiper
   :ensure try
   :config
@@ -87,11 +88,13 @@
 
 (use-package multiple-cursors
   :ensure t
-  :config (require 'multiple-cursors))
-
+  :config
+  (progn
+    (global-set-key (kbd "C-c m c") 'mc/edit-lines)))
+  
 (use-package auto-complete
   :ensure t
-  :init
+  :config
   (progn
     (ac-config-default)
     (global-auto-complete-mode t)))
@@ -126,10 +129,3 @@
   :bind (("C-x g" . magit-status)))
 
 ;;; init.el ends here
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
