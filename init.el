@@ -25,12 +25,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files '("~/.emacs/work_agenda.org" "~/.emacs/personal_agenda.org"))
+ '(org-agenda-files
+   '("~/.emacs/work_agenda.org" "~/.emacs/personal_agenda.org") t)
  '(package-archives
    '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa-stable" . "http://stable.melpa.org/packages/")))
  '(package-selected-packages
-   '(multiple-cursors magit ivy-hydra ess org-vcard nord-theme ivy use-package htmlize flycheck elpy)))
+   '(treemacs-projectile treemacs multiple-cursors magit ivy-hydra ess org-vcard nord-theme ivy use-package htmlize flycheck elpy)))
 
 
 (package-initialize)
@@ -128,4 +129,23 @@
   :ensure t
   :bind (("C-x g" . magit-status)))
 
+;; treemacs
+(use-package treemacs
+  :ensure t
+  :defer t
+  :config
+  (progn
+    (setq treemacs-is-never-other-window t))
+  )
+
+(use-package treemacs-projectile
+  :after (treemacs projectile)
+  :ensure t)
+
 ;;; init.el ends here
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
