@@ -1,4 +1,4 @@
-Personal emacs config file mainly with the following customizations, with pacakges automatically checked and downloaded from Melpa stable.
+Personal emacs config file mainly with the following customizations. Pacakges are automatically checked and downloaded from Melpa stable, but one has to install ag and roboto mono font on the system.
 
 ## General
 1. Default to nord theme (dark) and roboto mono font.
