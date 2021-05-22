@@ -10,6 +10,7 @@ Personal emacs config file mainly with the following customizations. Pacakges ar
 2. multi-cursor
 3. which-key
 4. ivy-hydra
+5. treemacs
 
 ## Project Management
 1. magit for git interface
