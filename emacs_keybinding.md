@@ -1,33 +1,33 @@
 I compile useful emacs key-bindings I often forget
 
 ## built-in
-`C-c C-e` execute current elisp line
-`C-x k` kill current buffer
-`C-x 0` kill current pane
-`C-x 1` kill all pane except the current one
-`C-x 2` split pane horizontally
-`C-x 3` split pane vertically
+- `C-c C-e` execute current elisp line
+- `C-x k` kill current buffer
+- `C-x 0` kill current pane
+- `C-x 1` kill all pane except the current one
+- `C-x 2` split pane horizontally
+- `C-x 3` split pane vertically
 
 ## dired
-`C-x C-d` launch dired
-`C-x C-q` edit mode
-`o` open a file in a new window
-`d` and `x` mark delete and execute
-`g` refresh
-`M-x find-name-dired` search for file names with a pattern like like *.org
+- `C-x C-d` launch dired
+- `C-x C-q` edit mode
+- `o` open a file in a new window
+- `d` and `x` mark delete and execute
+- `g` refresh
+- `M-x find-name-dired` search for file names with a pattern like like *.org
 
 ## magit
-`C-x g` launch magit
-`c c` and `C-c C-c` launch commit message panel and commit
-`g` refresh
+- `C-x g` launch magit
+- `c c` and `C-c C-c` launch commit message panel and commit
+- `g` refresh
 
 ## projectile
-`C-c p` launch projectile prefix panel
-`C-c p-s s` counsel-projectile-ag
+- `C-c p` launch projectile prefix panel
+- `C-c p-s s` counsel-projectile-ag
 
 ## multilple cursors
-`C-c m c` multiple lines
-`M-x mc/mark-all-like-this` mark all like this 
+- `C-c m c` multiple lines
+- `M-x mc/mark-all-like-this` mark all like this 
 
 ## org-mode
 - List
@@ -50,3 +50,8 @@ I compile useful emacs key-bindings I often forget
 	- `C-c [` add current file to agenda
 ## elpy
 
+## Vim
+This is for accidentaly jumping into a file with vim, which is a default and pre-installed in Linux distros.
+- `Esc` Toggle between normal modes and insert modes.
+- `:q!` to quit without saving and `:wq` to quit with saving
+- `u` to undo under normal mode
